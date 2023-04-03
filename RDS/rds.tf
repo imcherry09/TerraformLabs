@@ -8,7 +8,7 @@ resource "aws_db_subnet_group" "TDbSubnetGroup" {
 }
 
 resource "aws_db_parameter_group" "TmariadbParameterGroup" {
-  name   = "mariaDb"
+  name   = "mariadb"
   family = "mariadb10.6"
 
 }
