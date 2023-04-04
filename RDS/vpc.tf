@@ -8,54 +8,55 @@ resource "aws_vpc" "Tvpc" {
 }
 
 resource "aws_subnet" "publicSubnet1" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.1.0/24"
-availability_zone = "us-east-1a"
+  vpc_id                  = aws_vpc.Tvpc.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "us-east-1a"
+  map_public_ip_on_launch = true
   tags = {
     Name = "publicSubnet1"
   }
 }
 
 resource "aws_subnet" "publicSubnet2" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.2.0/24"
-availability_zone = "us-east-1a"
+  vpc_id            = aws_vpc.Tvpc.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "publicSubnet2"
   }
 }
 
 resource "aws_subnet" "publicSubnet3" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.3.0/24"
-availability_zone = "us-east-1a"
+  vpc_id            = aws_vpc.Tvpc.id
+  cidr_block        = "10.0.3.0/24"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "publicSubnet3"
   }
 }
 
 resource "aws_subnet" "privateSubnet1" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.4.0/24"
-availability_zone = "us-east-1a"
+  vpc_id            = aws_vpc.Tvpc.id
+  cidr_block        = "10.0.4.0/24"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "privateSubnet1"
   }
 }
 
 resource "aws_subnet" "privateSubnet2" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.5.0/24"
-availability_zone = "us-east-1b"
+  vpc_id            = aws_vpc.Tvpc.id
+  cidr_block        = "10.0.5.0/24"
+  availability_zone = "us-east-1b"
   tags = {
     Name = "privateSubnet2"
   }
 }
 
 resource "aws_subnet" "privateSubnet3" {
-  vpc_id     = aws_vpc.Tvpc.id
-  cidr_block = "10.0.6.0/24"
-availability_zone = "us-east-1a"
+  vpc_id            = aws_vpc.Tvpc.id
+  cidr_block        = "10.0.6.0/24"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "privateSubnet3"
   }
@@ -77,8 +78,8 @@ resource "aws_route_table" "TRT" {
     gateway_id = aws_internet_gateway.Tigw.id
   }
 
-  
-tags = {
+
+  tags = {
     Name = "TRT"
   }
 }
